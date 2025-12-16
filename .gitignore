@@ -1,0 +1,33 @@
+# MacOS
+.DS_Store
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+
+# Build artifacts
+lib/
+android/build/
+ios/build/
+ios/Pods/
+ios/DerivedData/
+
+# Android
+android/local.properties
+android/.gradle
+.gradle/
+
+# iOS
+*.xcworkspace
+!example/ios/*.xcworkspace
+xcuserdata/
+
+# Editor
+.vscode/
+.idea/
+*.iml
+
+# React Native
+.metro/
