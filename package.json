@@ -40,13 +40,13 @@
         "notification",
         "dynamic-island"
     ],
-    "repository": "https://github.com/piroposantosdev/rn-custom-ride-food-notification",
+    "repository": "https://github.com/piroposantosdev/RNCustomRideFoodNotification",
     "author": "Piropo Santos <piroposantosdev@gmail.com> (https://github.com/piroposantosdev)",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/piroposantosdev/rn-custom-ride-food-notification/issues"
+        "url": "https://github.com/piroposantosdev/RNCustomRideFoodNotification/issues"
     },
-    "homepage": "https://github.com/piroposantosdev/rn-custom-ride-food-notification#readme",
+    "homepage": "https://github.com/piroposantosdev/RNCustomRideFoodNotification#readme",
     "publishConfig": {
         "registry": "https://registry.npmjs.org/"
     },
