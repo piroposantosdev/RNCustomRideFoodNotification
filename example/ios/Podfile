@@ -24,7 +24,7 @@ end
 target 'RNCustomRideFoodNotification' do
   config = use_native_modules!
   
-  pod 'RNCustomRideFoodNotification', :path => '../..'
+
 
   use_react_native!(
     :path => config[:reactNativePath],

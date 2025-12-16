@@ -2122,6 +2122,8 @@ PODS:
     - React-perflogger (= 0.80.0)
     - React-utils (= 0.80.0)
     - SocketRocket
+  - RNCustomRideFoodNotification (1.0.0):
+    - React-Core
   - SocketRocket (0.7.1)
   - Yoga (0.0.0)
 
@@ -2198,6 +2200,7 @@ DEPENDENCIES:
   - ReactAppDependencyProvider (from `build/generated/ios`)
   - ReactCodegen (from `build/generated/ios`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - RNCustomRideFoodNotification (from `../node_modules/rn-custom-ride-food-notification`)
   - SocketRocket (~> 0.7.1)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
@@ -2349,6 +2352,8 @@ EXTERNAL SOURCES:
     :path: build/generated/ios
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  RNCustomRideFoodNotification:
+    :path: "../node_modules/rn-custom-ride-food-notification"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -2424,9 +2429,10 @@ SPEC CHECKSUMS:
   ReactAppDependencyProvider: 3267432b637c9b38e86961b287f784ee1b08dde0
   ReactCodegen: 5d41e1df061200130dd326e55cdfdf94b0289c6e
   ReactCommon: b028d09a66e60ebd83ca59d8cc9a1216360db147
+  RNCustomRideFoodNotification: e579151e3f500c93e117635019ab27790cdb9bd7
   SocketRocket: d4aabe649be1e368d1318fdf28a022d714d65748
   Yoga: 0c4b7d2aacc910a1f702694fa86be830386f4ceb
 
-PODFILE CHECKSUM: 54f975979f8237a218436de0c8fdec03d7102b1f
+PODFILE CHECKSUM: 7f4010d46b3fd23feae8e231cb953b543846fa7e
 
 COCOAPODS: 1.16.2
