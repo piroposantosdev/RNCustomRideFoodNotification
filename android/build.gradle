@@ -1,21 +1,47 @@
 buildscript {
-    ext {
-        buildToolsVersion = "35.0.0"
-        minSdkVersion = 24
-        compileSdkVersion = 35
-        targetSdkVersion = 35
-        ndkVersion = "27.1.12297006"
-        kotlinVersion = "2.1.20"
-    }
-    repositories {
-        google()
-        mavenCentral()
-    }
-    dependencies {
-        classpath("com.android.tools.build:gradle")
-        classpath("com.facebook.react:react-native-gradle-plugin")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
-    }
+  ext.safeExtGet = {prop, fallback ->
+    rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
+  }
+  repositories {
+    google()
+    mavenCentral()
+  }
+  dependencies {
+    classpath("com.android.tools.build:gradle:7.3.1")
+    classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.20")
+  }
 }
 
-apply plugin: "com.facebook.react.rootproject"
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+  compileSdkVersion safeExtGet('compileSdkVersion', 33)
+  
+  defaultConfig {
+    minSdkVersion safeExtGet('minSdkVersion', 21)
+    targetSdkVersion safeExtGet('targetSdkVersion', 33)
+  }
+
+  sourceSets {
+    main {
+      java.srcDirs = ['src/main/java']
+      res.srcDirs = ['src/main/res']
+    }
+  }
+}
+
+repositories {
+  mavenLocal()
+  maven {
+    // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+    url("$rootDir/../node_modules/react-native/android")
+  }
+  google()
+  mavenCentral()
+}
+
+dependencies {
+  implementation "com.facebook.react:react-native:+"
+  implementation "org.jetbrains.kotlin:kotlin-stdlib:1.7.20"
+}

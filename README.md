@@ -1,97 +1,79 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# React Native Custom Ride/Food Notification
 
-# Getting Started
+A native plugin for React Native to display customizable Live Activities (iOS) and Custom Notifications (Android) for Ride-Sharing and Food Delivery apps.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
-
-## Step 1: Start Metro
-
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
-
-To start the Metro dev server, run the following command from the root of your React Native project:
+## Installation
 
 ```sh
-# Using npm
-npm start
-
-# OR using Yarn
-yarn start
+npm install rn-custom-ride-food-notification
 ```
 
-## Step 2: Build and run your app
+## iOS Setup
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
-
-### Android
-
+### 1. Install Pods
 ```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
+cd ios && pod install
 ```
 
-### iOS
+### 2. Add Widget Extension (Required for Live Activities)
+Live Activities require a Widget Extension target in your iOS project.
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+1.  Open your project in Xcode (`xed ios`).
+2.  Go to **File > New > Target...**.
+3.  Select **Widget Extension**.
+4.  Name it (e.g., `RideFoodWidget`) and ensure **Include Live Activity** is checked.
+5.  Uncheck "Include Configuration App Intent".
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+### 3. Add Widget Code
+Since the UI for the Live Activity must live in your app's extension, you need to copy the Swift UI code.
 
-```sh
-bundle install
+**Option A: Copy from this library**
+Copy the contents of `RideFoodActivityWidget.swift` and `RideFoodActivityAttributes.swift` from `node_modules/rn-custom-ride-food-notification/ios/` to your new Widget Extension folder.
+
+**Option B: Use your own UI**
+You can implement your own UI using the `RideFoodActivityAttributes` struct. Ensure the struct matches the one expected by the library.
+
+### 4. Configure Info.plist
+Add `NSSupportsLiveActivities` to your main app's `Info.plist` and set it to `YES`.
+
+## Android Setup
+
+1.  **Permissions**: Request `POST_NOTIFICATIONS` permission at runtime (Android 13+).
+2.  **Layouts**: Copy the layout files (`notification_ride.xml`, `notification_food.xml`) from `node_modules/rn-custom-ride-food-notification/android/src/main/res/layout/` to your app's `android/app/src/main/res/layout/` folder.
+
+## Usage
+
+```typescript
+import RideFoodNotification from 'rn-custom-ride-food-notification';
+
+// Start Activity
+const activityId = await RideFoodNotification.start('ride', {}, {
+  statusTitle: 'Dropoff at 17:06',
+  statusDescription: 'Heading to Destination',
+  progress: 0.5,
+  estimatedTime: '17:06',
+  driverOrRestaurantName: 'Uber',
+  iconName: 'car.fill',
+  primaryColorHex: '#FFFFFF',
+});
+
+// Update
+await RideFoodNotification.update(activityId, {
+  progress: 0.8,
+  estimatedTime: '17:08',
+  // ... other fields
+});
+
+// End
+await RideFoodNotification.end(activityId);
 ```
 
-Then, and every time you update your native dependencies, run:
+## Customization
 
-```sh
-bundle exec pod install
-```
+- `iconName`: Pass any SF Symbol name (e.g., `car.fill`, `fork.knife`) OR the name of a custom image asset in your Widget Extension.
+- `secondaryIconName`: Icon for the footer (e.g., establishment logo).
+- `orderNumber`: Order ID to display in the footer.
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+## License
 
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
-
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
-
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+MIT
