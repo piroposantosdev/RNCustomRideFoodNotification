@@ -3,6 +3,7 @@ import ActivityKit
 import React
 
 @objc(LiveActivityModule)
+@available(iOS 16.2, *)
 class LiveActivityModule: NSObject {
     
     @objc
@@ -18,8 +19,8 @@ class LiveActivityModule: NSObject {
             return
         }
         
-        guard #available(iOS 16.1, *) else {
-            reject("not_supported", "Live Activities require iOS 16.1+", nil)
+        guard #available(iOS 16.2, *) else {
+            reject("not_supported", "Live Activities require iOS 16.2+", nil)
             return
         }
         
@@ -44,8 +45,8 @@ class LiveActivityModule: NSObject {
         resolver resolve: @escaping RCTPromiseResolveBlock,
         rejecter reject: @escaping RCTPromiseRejectBlock
     ) {
-        guard #available(iOS 16.1, *) else {
-            reject("not_supported", "Live Activities require iOS 16.1+", nil)
+        guard #available(iOS 16.2, *) else {
+            reject("not_supported", "Live Activities require iOS 16.2+", nil)
             return
         }
         
@@ -73,8 +74,8 @@ class LiveActivityModule: NSObject {
         resolver resolve: @escaping RCTPromiseResolveBlock,
         rejecter reject: @escaping RCTPromiseRejectBlock
     ) {
-        guard #available(iOS 16.1, *) else {
-            reject("not_supported", "Live Activities require iOS 16.1+", nil)
+        guard #available(iOS 16.2, *) else {
+            reject("not_supported", "Live Activities require iOS 16.2+", nil)
             return
         }
         
