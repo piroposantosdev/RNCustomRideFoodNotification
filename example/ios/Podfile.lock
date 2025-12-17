@@ -2122,7 +2122,7 @@ PODS:
     - React-perflogger (= 0.80.0)
     - React-utils (= 0.80.0)
     - SocketRocket
-  - RNCustomRideFoodNotification (1.0.0):
+  - RNCustomRideFoodNotification (1.0.1):
     - React-Core
   - SocketRocket (0.7.1)
   - Yoga (0.0.0)
@@ -2429,7 +2429,7 @@ SPEC CHECKSUMS:
   ReactAppDependencyProvider: 3267432b637c9b38e86961b287f784ee1b08dde0
   ReactCodegen: 5d41e1df061200130dd326e55cdfdf94b0289c6e
   ReactCommon: b028d09a66e60ebd83ca59d8cc9a1216360db147
-  RNCustomRideFoodNotification: c216dbd0411622f9689f8c2b4423f265eb171f88
+  RNCustomRideFoodNotification: 0d8056b54ba098f8c8a98dcdaaa5852f24bcc1d9
   SocketRocket: d4aabe649be1e368d1318fdf28a022d714d65748
   Yoga: 0c4b7d2aacc910a1f702694fa86be830386f4ceb
 
