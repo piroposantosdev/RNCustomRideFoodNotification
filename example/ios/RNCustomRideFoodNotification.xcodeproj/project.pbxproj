@@ -13,8 +13,6 @@
 		6A6845AE2EF19E8A007C17E2 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6845AD2EF19E89007C17E2 /* WidgetKit.framework */; };
 		6A6845B02EF19E8A007C17E2 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6845AF2EF19E8A007C17E2 /* SwiftUI.framework */; };
 		6A6845BF2EF19E8E007C17E2 /* RideFoodWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 6A6845AC2EF19E89007C17E2 /* RideFoodWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		6A68463C2EF1BD73007C17E2 /* LiveActivityModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A68463A2EF1BD73007C17E2 /* LiveActivityModule.m */; };
-		6A68463D2EF1BD73007C17E2 /* LiveActivityModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A68463B2EF1BD73007C17E2 /* LiveActivityModule.swift */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -54,9 +52,6 @@
 		6A6845AC2EF19E89007C17E2 /* RideFoodWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RideFoodWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A6845AD2EF19E89007C17E2 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		6A6845AF2EF19E8A007C17E2 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		6A6846232EF1B73B007C17E2 /* RNCustomRideFoodNotification-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNCustomRideFoodNotification-Bridging-Header.h"; sourceTree = "<group>"; };
-		6A68463A2EF1BD73007C17E2 /* LiveActivityModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiveActivityModule.m; sourceTree = "<group>"; };
-		6A68463B2EF1BD73007C17E2 /* LiveActivityModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityModule.swift; sourceTree = "<group>"; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = RNCustomRideFoodNotification/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = RNCustomRideFoodNotification/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -70,20 +65,12 @@
 			);
 			target = 6A6845AB2EF19E89007C17E2 /* RideFoodWidgetExtension */;
 		};
-		6A6845CA2EF1A489007C17E2 /* Exceptions for "RideFoodWidget" folder in "RNCustomRideFoodNotification" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				RideFoodActivityAttributes.swift,
-			);
-			target = 13B07F861A680F5B00A75B9A /* RNCustomRideFoodNotification */;
-		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		6A6845B12EF19E8A007C17E2 /* RideFoodWidget */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				6A6845CA2EF1A489007C17E2 /* Exceptions for "RideFoodWidget" folder in "RNCustomRideFoodNotification" target */,
 				6A6845C32EF19E8E007C17E2 /* Exceptions for "RideFoodWidget" folder in "RideFoodWidgetExtension" target */,
 			);
 			explicitFileTypes = {
@@ -119,9 +106,6 @@
 		13B07FAE1A68108700A75B9A /* RNCustomRideFoodNotification */ = {
 			isa = PBXGroup;
 			children = (
-				6A68463A2EF1BD73007C17E2 /* LiveActivityModule.m */,
-				6A68463B2EF1BD73007C17E2 /* LiveActivityModule.swift */,
-				6A6846232EF1B73B007C17E2 /* RNCustomRideFoodNotification-Bridging-Header.h */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				761780EC2CA45674006654EE /* AppDelegate.swift */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
@@ -364,8 +348,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A68463C2EF1BD73007C17E2 /* LiveActivityModule.m in Sources */,
-				6A68463D2EF1BD73007C17E2 /* LiveActivityModule.swift in Sources */,
 				761780ED2CA45674006654EE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,7 +393,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = RNCustomRideFoodNotification;
-				SWIFT_OBJC_BRIDGING_HEADER = "RNCustomRideFoodNotification/RNCustomRideFoodNotification-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -440,7 +421,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = RNCustomRideFoodNotification;
-				SWIFT_OBJC_BRIDGING_HEADER = "RNCustomRideFoodNotification/RNCustomRideFoodNotification-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
