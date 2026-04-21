@@ -1,6 +1,6 @@
 {
     "name": "rn-custom-ride-food-notification",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Custom Live Activities and Notifications for Ride and Food apps",
     "main": "lib/commonjs/index",
     "module": "lib/module/index",
